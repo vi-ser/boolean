@@ -1,0 +1,148 @@
+/*
+COLOR PALETTE
+  black: rgb(0, 23, 50); #001732;
+  orange: rgb(241, 117, 78); #f1754e;
+  lightgreen: rgb(78, 241, 187); #4ef1bb;
+  bg-color: rgb(216, 238, 232);  #d8eee8;
+  bg-dark-color: rgb(203, 224, 221); #cbe0dd;
+  clicked-cell: rgb(157, 197, 199); #9dc5c7;
+*/
+
+/* CSS RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Regole generiche */
+body {
+  padding: 16px;
+  line-height: 1;
+  color: rgb(0, 23, 50);
+  background-image: url('images/underwater.gif');
+  background-size: cover;
+  font-family: 'Darker Grotesque', sans-serif;
+}
+
+.game-container {
+  width: 484px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+/* Pannello di gioco */
+h1 {
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.score {
+  font-size: 32px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Tabellone di gioco */
+
+.game-board {
+  position: relative;
+  border: 2px solid rgb(0, 23, 50);
+}
+
+.grid {
+  height: 480px;
+  width: 480px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.cell {
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  background-color: #A4F2FF;
+  /* border: 1px dashed black; */
+}
+
+.cell-dark {
+  background-color: #056895;
+}
+
+.cell:hover {
+  background-color: #7CB7C1;
+}
+
+.cell-clicked {
+  background-color: #034359;
+}
+
+.cell-bomb {
+  background-color: grey;
+  background-image: url('images/02-bomb.png');
+  background-size: contain;
+}
+
+.cell-treasure {
+  background-color: yellow;
+  background-image: url('images/17-pirate\ treasure.png');
+  background-size: contain;
+}
+
+.cell-treasure,
+.cell-clicked,
+.cell-bomb {
+  cursor: not-allowed;
+}
+
+/* Schermata di fine gioco */
+.end-game-screen {
+  background-color: rgba(255, 3, 3, 0.688);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.win {
+  background-color: rgba(78, 241, 187, 0.6);
+}
+
+.win-treasure {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.end-game-text {
+  font-size: 48px;
+  line-height: 1.2;
+  font-family: 'Press Start 2P', cursive;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+button {
+  border: 2px solid rgb(0, 23, 50);
+  font-size: 24px;
+  font-family: 'Darker Grotesque', sans-serif;
+  text-transform: uppercase;
+  padding: 4px 20px 8px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(203, 224, 221);
+}
+
+.hidden {
+  display: none;
+}
